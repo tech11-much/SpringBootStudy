@@ -1,0 +1,44 @@
+#可以注入到配置类中
+#对象属性
+student:
+  name: qinjiang
+  age: 3
+  #行内书写
+student1: {name: qinjiang,age: 3}
+#数组
+pets:
+  - cat
+  - dog
+  - pig
+
+pets1: [cat,dog,pig]
+
+#在注解中，这个person是prefix
+person1:
+  name: qinjiang
+  age: 3
+  hello: 旺财
+  happy: false
+  birth: 2000/01/01
+  maps: {k1: v1,k2: v2}
+  lists:
+    - code
+    - girl
+    - music
+  dog:
+    name: 旺财
+    age: 4
+
+person:
+  name: qinjiang${random.uuid} # 随机uuid
+  age: ${random.int}  # 随机int
+  happy: false
+  birth: 2000/01/01
+  maps: {k1: v1,k2: v2}
+  lists:
+    - code
+    - girl
+    - music
+  dog:
+    name: ${person.hello:other}_旺财
+    age: 1
